@@ -1,4 +1,12 @@
-TEMPLATE = app
+#-------------------------------------------------
+#
+# Project created by QtCreator 2011-03-10T17:04:44
+#
+#-------------------------------------------------
+
+QT       += core gui
+
+TARGET = FOgreWidget
 
 unix {
     # You may need to change this include directory
@@ -23,32 +31,9 @@ CONFIG(debug, debug|release) {
 }
 CONFIG(release, debug|release):LIBS *= -lOgreMain -lOIS
 
-HEADERS       = mainwindow.h \
-    Input.h \
-    Result.h \
-    cal.h \
-    MyThread.h \
-    QItemPanel_p.h \
-    QItemPanel.h \
-    helpdialog.h \
-    mainwindow_p.h \
-    ogreview.h
-SOURCES       = main.cpp \
-                mainwindow.cpp \
-    cal.cpp \
-    QItemPanel.cpp \
-    helpdialog.cpp \
-    ogreview.cpp
-#! [0]
-RESOURCES     = application.qrc
-#! [0]
+SOURCES += main.cpp\
+        fogrewidget.cpp
 
-# install
-target.path = $$[QT_INSTALL_EXAMPLES]/mainwindows/application
-sources.files = $$SOURCES $$HEADERS $$RESOURCES $$FORMS application.pro images
-sources.path = $$[QT_INSTALL_EXAMPLES]/mainwindows/application
-INSTALLS += target sources
+HEADERS  += fogrewidget.h
 
-symbian: include($$QT_SOURCE_TREE/examples/symbianpkgrules.pri)
-
-FORMS +=
+FORMS    += fogrewidget.ui
